@@ -31,15 +31,15 @@ function timeUpdate() {
 }
 
 function updateCity(event) {
-  let cityTimezone = event.target.value;
-  let cityName = cityTimezone.replace("_", " ").split("/")[1];
-  let cityTime = moment().tz(cityTimezone);
+  let cityTimeZone = event.target.value;
+  let cityName = cityTimeZone.replace("_", " ").split("/")[1];
+  let cityTime = moment().tz(cityTimeZone);
   let citiesElement = document.querySelector("#cities");
   citiesElement.innerHTML = ` 
     <div class="city">
           <div>
             <h2>${cityName}</h2>
-            <div class="date">${cityName.format("MMMM Do YYYY")}</div>
+            <div class="date">${cityTime.format("MMMM Do YYYY")}</div>
           </div>
           <div class="time">${cityTime.format(
             "h:mm:ss"
